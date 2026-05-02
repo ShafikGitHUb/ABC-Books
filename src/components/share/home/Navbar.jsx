@@ -1,4 +1,8 @@
+import Link from 'next/link';
 import React from 'react';
+import Navlogo from "@/assets/logo.png"
+import Image from 'next/image';
+import NavLink from '@/components/NavLink';
 
 const Navbar = () => {
     return (
@@ -12,21 +16,21 @@ const Navbar = () => {
       <ul
         tabIndex="-1"
         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-        <li><a>Home</a></li>
-        <li><a>All Books</a></li>
+    <li><NavLink href={"/"}>Home</NavLink></li>
+     <li><NavLink href={"/allbooks"}>All Books</NavLink></li>
       </ul>
     </div>
-    <a className="btn btn-ghost text-[12px] md:text-xl  bg-yellow-400 rounded-4xl text-white">ABC Books</a>
+   <NavLink href={"/"}> <Image src={Navlogo} alt='Navlogo'></Image></NavLink>
   </div>
   <div className="navbar-center hidden md:flex">
     <ul className="menu menu-horizontal px-1">
-      <li><a>Home</a></li>
-      <li><a>All Books</a></li>
+        <li><NavLink href={"/"}>Home</NavLink></li>
+     <li><NavLink href={"/allbooks"}>All Books</NavLink></li>
     </ul>
   </div>
   <div className="navbar-end gap-2">
-    <a className="btn text-[12px] md:text-[16px]">LogIn</a>
-    <a className="btn text-[12px] md:text-[16px]">LogOut</a>
+    <NavLink href={"/login"}><button className='btn text-[12px] md:text-[16px]'>LogIn</button></NavLink>
+    <NavLink href={"/logout"}><button className='btn text-[12px] md:text-[16px]'>LogOut</button></NavLink>
   </div>
 </div>
 </div>
