@@ -7,8 +7,10 @@ import Link from 'next/link';
 const BookCard = ({Books}) => {
     const {id,title,author,image_url,description,category} = Books;
     return (
-        <Card className='border rounded-xl text-center'>
-            <div className='space-y-2'>
+
+
+ <Card className='border rounded-xl text-center'>
+                        <div className='space-y-2'>
                <div className='relative w-full aspect-square'> <Image className='rounded-xl object-cover' src={image_url} fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" alt='bookimg' ></Image><Chip className='absolute top-3 right-3 bg-amber-200'>{category}</Chip>
                  
                </div>
@@ -18,6 +20,8 @@ const BookCard = ({Books}) => {
                 <Link href={`/allbooks/${id}`}>  <Button variant='outline' className={"w-full"}>Description</Button></Link>
             </div>
         </Card>
+
+       
     );
 };
 
