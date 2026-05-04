@@ -55,7 +55,7 @@ const AllBooksDetails = async ({ params }) => {
           ✍️ {book.author}
         </p>
 
-        <div className="h-[2px] w-16 bg-amber-400 rounded"></div>
+        <div className="h-2 w-16 bg-amber-400 rounded"></div>
 
         <p className="text-gray-600 leading-relaxed">
           {book.description}
