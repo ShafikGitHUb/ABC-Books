@@ -2,6 +2,7 @@ import { Button, Card } from '@heroui/react';
 import Image from 'next/image';
 import React from 'react';
 import {Chip} from "@heroui/react";
+import Link from 'next/link';
 
 const BookCard = ({Books}) => {
     const {id,title,author,image_url,description,category} = Books;
@@ -12,9 +13,9 @@ const BookCard = ({Books}) => {
                  
                </div>
               
-                <div><h2>{title}</h2>
-                <h2>{author}</h2></div>
-                <Button variant='outline' className={"w-full"}>Description</Button>
+                <div><h2 className='font-semibold text-xl'>{title}</h2>
+                <h2 className='text-gray-500'>{author}</h2></div>
+                <Link href={`/allbooks/${id}`}>  <Button variant='outline' className={"w-full"}>Description</Button></Link>
             </div>
         </Card>
     );

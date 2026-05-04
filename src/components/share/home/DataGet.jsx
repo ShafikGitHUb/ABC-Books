@@ -4,7 +4,7 @@ import React from 'react';
 const BooksData = async() => {
     const res = await fetch("https://abc-books.vercel.app/data.json");
     const data = await res.json();
-    const sliceData = data.slice(0,4);
+    const sliceData = data.slice(0,8);
     return (
         <div className='w-11/12 mx-auto'>
             <h2 className='font-bold text-2xl'> Top Books</h2>
