@@ -1,3 +1,4 @@
+import Category from "@/components/Category";
 import Banner from "@/components/share/home/Banner";
 import DataGet from "@/components/share/home/DataGet";
 import Marque from "@/components/share/home/Marque";
@@ -12,7 +13,7 @@ export default async function Home () {
   <div>
     <Banner></Banner>
     <Marque data={data}></Marque>
-    <DataGet></DataGet>
+      <DataGet></DataGet>
   </div>
   );
 }
