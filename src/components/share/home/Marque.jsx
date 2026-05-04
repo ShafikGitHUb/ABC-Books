@@ -4,7 +4,7 @@ import Marquee from "react-fast-marquee";
 
 const Marque = ({ data }) => {
   return (
-    <div className='w-11/12 mx-auto py-3  bg-gray-100  shadow-sm mb-8'>
+    <div className='w-11/12 mx-auto py-1  bg-gray-100  shadow-sm mb-8'>
       <Marquee pauseOnHover={true} speed={50} gradient={false}>
         {data?.map(book => (
           <div
