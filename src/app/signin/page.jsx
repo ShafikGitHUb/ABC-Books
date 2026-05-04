@@ -5,6 +5,7 @@ import { authClient } from "@/lib/auth-client";
 import { useState } from "react";
 import Link from "next/link";
 import { FaGoogle } from "react-icons/fa";
+import { toast } from "react-toastify";
 
 const SignIn = () => {
     const [showPassword, setShowPassword] = useState(false);
@@ -18,12 +19,12 @@ const { data, error } = await authClient.signIn.email({
        callbackURL: "/",
     },);
  if (error) {
-  alert(error.message || "Signup Failed");
+  toast(error.message || "Signup Failed");
   return;
 }
 
 if (data) {
-  alert("SignIn Successfully");
+  toast("SignIn Successfully");
 }
 };
 const handleGoogleSignIn = async () => {
@@ -31,10 +32,10 @@ const handleGoogleSignIn = async () => {
     provider: "google",
       });
    if (error) {
-    alert(error.message || "Google SignIn Failed");
+    toast(error.message || "Google SignIn Failed");
   };
   if (data) {
-  alert("Google SignIn Successfully");
+   toast("Succefully Login");
 }
 };
 

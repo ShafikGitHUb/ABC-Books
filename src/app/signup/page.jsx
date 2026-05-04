@@ -4,6 +4,7 @@ import {Button, Description, FieldError, Form, Input, Label, TextField} from "@h
 import { authClient } from "@/lib/auth-client"; 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { toast } from "react-toastify";
 
 const SignupPage = () => {
     const [showPassword, setShowPassword] = useState(false);
@@ -21,12 +22,12 @@ const { data, error } = await authClient.signUp.email({
        password,
     },);
  if (error) {
-  alert(error.message || "Signup Failed");
+  toast(error.message || "Signup Failed");
   return;
 }
 
 if (data) {
-  alert("SignUp Successfully");
+   toast("SignUp Successfully");
   router.push("/signin")
 }
 
